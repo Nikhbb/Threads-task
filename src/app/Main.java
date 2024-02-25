@@ -2,11 +2,13 @@ package app;
 
 public class Main {
     public static void main(String[] args) {
-        FruitThread fruits = new FruitThread(5);
-        VegetableThread vegetables = new VegetableThread(5);
+        FruitThread fruitThread = new FruitThread(5);
+        VegetableThread vegetableThread = new VegetableThread(5);
 
-        vegetables.setPriority(Thread.MAX_PRIORITY);
-        fruits.start();
-        vegetables.start();
+        fruitThread.setPriority(Thread.MIN_PRIORITY);
+        vegetableThread.setPriority(Thread.MAX_PRIORITY);
+
+        fruitThread.start();
+        vegetableThread.start();
     }
 }
